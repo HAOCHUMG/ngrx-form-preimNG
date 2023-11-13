@@ -1,0 +1,81 @@
+<!--機台名稱、申請人、申請人電話、申請日期-->
+<p-card header="機台申請表" styleClass="user-form" class="flex justify-content-center">
+  <div [formGroup]="userForm" (ngSubmit)="addUser()"  class="applicationCard">
+    <div>
+      <i class="pi pi-user" style="font-size: 2.5rem">申請表</i>
+    </div>
+    <span class="p-float-label">
+      <input pInputText id="username" [(ngModel)]="manchineName" formControlName="manchineName" />
+      <label htmlFor="username">機台名稱</label>
+      <small class="p-error block" *ngIf="userForm.get('manchineName')?.invalid && userForm.get('manchineName')?.dirty">
+        機台名稱必須填
+      </small>
+    </span>
+
+    <span class="p-float-label">
+      <input pInputText id="username"  [(ngModel)]="applicant" formControlName="applicant"/>
+      <label htmlFor="username">申請人</label>
+      <small class="p-error block" *ngIf="userForm.get('applicant')?.invalid && userForm.get('applicant')?.dirty">
+        申請人必須填
+      </small>
+    </span>
+    <span class="p-float-label">
+      <input pInputText id="username" [(ngModel)]="cellphone" placeholder="0919830883" formControlName="cellphone"/>
+      <label htmlFor="username">電話</label>
+      <small class="p-error block" *ngIf="userForm.get('cellphone')?.invalid && userForm.get('cellphone')?.dirty">
+        電話必須填
+      </small>
+    </span>
+
+    <span class="p-float-label">
+      <p-calendar [(ngModel)]="date" formControlName="date"></p-calendar>
+      <label htmlFor="username">日期</label>
+      <small class="p-error block" *ngIf="userForm.get('date')?.invalid && userForm.get('date')?.dirty">
+        日期必須填
+      </small>
+    </span>
+    <button (click)="showModal()" pButton pRipple label="Submit" class="p-button-success" [disabled]="userForm.invalid" ></button>
+  </div>
+</p-card>
+
+<div class="card flex justify-content-center">
+  <p-dialog class="dialogchange" header="Header" [(visible)]="displayModel" [style]="{ width: '30vw',height:'65vh' }" [modal]="true">
+      <ng-template pTemplate="header">
+          <span class="text-xl font-bold">申請表</span>
+      </ng-template>
+      <p>
+        <div class="formlist">
+          <div class="formInfor">機台: {{manchineName}}</div>
+          <div class="formInfor">申請人: {{applicant}}</div>
+          <div class="formInfor">電話: {{cellphone}}</div>
+          <div class="formInfor">日期: {{date|date:'yyyy/MM/dd'}}</div>
+        </div>
+      <ng-template pTemplate="footer">
+          <p-button (onClick)="onShow()" icon="pi pi-check" (click)="displayModel = false" label="Ok" styleClass="p-button-text"></p-button>
+      </ng-template>
+  </p-dialog>
+</div>
+
+<p-card header="機台資訊" class="cardTwo">
+  <p class="m-0">
+    <div class="card">
+      <p-table [value]="AllData"  [tableStyle]="{ 'min-width': '50rem' }">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Quantity</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product >
+              <tr>
+                  <td>{{product.ManchineNameData}}</td>
+                  <td>{{product.ApplicantData}}</td>
+                  <td>{{product.CellphoneData }}</td>
+                  <td>{{product.DateData|date:'yyyy-MM-dd'}}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+  </div>
+</p-card>

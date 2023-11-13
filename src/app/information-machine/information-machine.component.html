@@ -1,0 +1,49 @@
+
+<p-card header="機台資訊" class="cardOne">
+  <div class="gap">
+    <p class="m-0">
+      <p-dropdown [options]="areaMachine" optionLabel="Aname" (onChange)="changeNum($event)"></p-dropdown>
+    </p>
+
+    <p class="m-0">
+      <p-dropdown [options]="LineMachine" optionLabel="Pname" (onChange)="changeLine($event)"></p-dropdown>
+    </p>
+
+    <p class="m-0">
+      <p-dropdown [options]="ProductMachine" optionLabel="Mname" (onChange)="changeMachine($event)"></p-dropdown>
+    </p>
+  </div>
+
+  <p-button label="Submit" class="infoButton" (onClick)="getMachineInfo()"></p-button>
+</p-card>
+<!--
+<div>
+  <hr>
+</div> -->
+
+
+<p-card header="機台資訊" class="cardTwo">
+  <p class="m-0">
+    <div class="card">
+      <p-table [value]="ProductStatus" [tableStyle]="{ 'min-width': '50rem' }">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Quantity</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+              <tr>
+                  <td [style]="{'background-color': product.statusName === true ? 'greenyellow':'tomato'}">{{ product.id }}</td>
+                  <td>{{ product.Mname }}</td>
+                  <td>{{ product.status }}</td>
+                  <td>{{ product.quantity }}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+  </div>
+</p-card>
+
+

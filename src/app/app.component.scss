@@ -1,0 +1,77 @@
+.navbar{
+  /* width: 100%; */
+  /* height: 100px; */
+  background-color: darkgray;
+}
+.All-main{
+  display: flex;
+  flex-direction: row;
+}
+.sideSlide{
+  display: flex;
+  background-color: gray;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* justify-content: center; */
+  width: 200px;
+  height: 100vh;
+}
+/* 路由一 */
+.info-mac{
+  font-weight: 600;
+  margin-top: 50px;
+  padding: 20px;
+  width: 100%;
+  height: 30px;
+  /* background-color: black; */
+  display: inline-block;
+  text-align: center;
+  outline: none;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+}
+.info-mac:link{
+  text-decoration: none;
+}
+.info-mac:visited{
+  text-decoration: none;
+}
+/* 路由一 */
+.apply-mac{
+  font-weight: 600;
+  margin-top: 50px;
+  padding: 20px;
+  width: 100%;
+  height: 30px;
+  /* background-color: black; */
+  display: inline-block;
+  text-align: center;
+  outline: none;
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.main{
+  width: 500px;
+  height: 80vh;
+  flex: 1;
+}
+.sideSlide h1 {
+  font-weight: 600;
+  /* padding: 20px; */
+  width: 100%;
+  height: 50px;
+  /* background-color: black; */
+  display: inline-block;
+  text-align: center;
+  line-height: 50px;
+  outline: none;
+  color: ghostwhite;
+  font-size: 24px;
+  text-decoration: none;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+}

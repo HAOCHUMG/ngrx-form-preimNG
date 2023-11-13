@@ -1,0 +1,42 @@
+.application{
+  max-width: 500px;
+  height: 200px;
+  padding-top: 50px;
+}
+.applicationCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 300px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.dialogchange{
+  width: 800px;
+  height: 500px;
+}
+.formlist{
+  display: flex;
+  flex-direction: column;
+}
+.formInfor{
+  width: 300px;
+  height: 50px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 24px;
+}
+.formInfor:nth-child(1){
+  margin-top: 100px;
+}
+.text-xl{
+  font-weight: bold;
+  font-size: 24px;
+}
+.p-float-label{
+  width: 210px;
+}
